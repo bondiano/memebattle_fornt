@@ -19,7 +19,7 @@
         </b-container>
 </b-navbar>
     <router-view/>
-    <footer>
+    <footer class="footer" id="bottom-footer">
       <b-container class="bv-example-row">
     <b-row class="text-center">
       <b-col><img src="" alt="logo"></b-col>
@@ -34,8 +34,7 @@
         <a href="http://facebook.com/" target="__blank"><i class="text fa fa-facebook fa-2x" aria-hidden="true"></i></a>
         <a href="http://twitter.com" target="__blank"><i class="text fa fa-twitter fa-2x" aria-hidden="true"></i></a>
         </b-col>
-    </b-row>
-    <b-row class="text-center">
+        <div class="w-100"></div>
         <b-col><p class="text under">Сделанно специально для FunTech Hackaton</p></b-col>
     </b-row>
     </b-container>
@@ -111,6 +110,7 @@ footer{
 }
 footer .text.under{
   color: #484c5e !important;
-  margin: 5px !important;;
+  margin: 5px !important;
+
 }
 </style>
