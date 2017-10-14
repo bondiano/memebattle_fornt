@@ -6,8 +6,8 @@ Vue.use(Vuex);
 
 const userModule = {
   state: {
-    username: '',
-    coins: 0,
+    username: 'Meow',
+    coins: 500,
     avatar: 'https://avatars2.githubusercontent.com/u/22221382?s=460&v=4',
   },
 
