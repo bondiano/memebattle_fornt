@@ -1,12 +1,33 @@
 <template>
   <div id="app">
-    <nav class="navbar">
-      <a href="#/rulels">Правила</a>
-      <a href="#/about">О нас</a>
-      <img :src= "avatar" alt="Avatar" class="avatar">
-    </nav>
+    <b-navbar toggleable="md" type="dark" variant="info" class="navbar">
+      <b-nav-toggle target="nav_collapse"></b-nav-toggle>
+      <b-collapse is-nav id="nav_collapse">
+      <b-nav is-nav-bar>
+        <b-nav-item href="#/rulels">Правила</b-nav-item>
+        <b-nav-item href="#/about">О нас</b-nav-item>
+      </b-nav>
+      </b-collapse>
+
+      <b-nav is-nav-bar class="ml-auto">
+        <b-navbar-brand href="#/"><img :src= "avatar" alt="Avatar" class="avatar"></b-navbar-brand>
+      </b-nav>
+</b-navbar>
     <router-view/>
-    <footer></footer>
+    <a href="#/">На главную</a>
+    <footer>
+      <img src="" alt="logo">
+      <ul>
+        <li><a href="#/about"></a>О нас</li>
+        <li><a href="#/rules"></a>Правила</li>
+      </ul>
+      <div>
+        <p>Следи за нами в соц сетях:</p>
+        <a href="http://vk.com/" target="__blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+        <a href="http://facebook.com/" target="__blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="http://twitter.com" target="__blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      </div>
+      <p>Сделанно специально для FunTech Hackaton</p></footer>
   </div>
 </template>
 
@@ -28,5 +49,8 @@ export default {
 .avatar{
   height: 75px;
   border-radius: 100%;
+}
+.navbar{
+  background-color: #000000 !important;
 }
 </style>
