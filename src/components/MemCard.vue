@@ -52,4 +52,7 @@
   .wrapper{
 
   }
+  a{
+    text-decoration: none;
+  }
 </style>

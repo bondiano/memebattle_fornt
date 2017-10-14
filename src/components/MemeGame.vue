@@ -23,11 +23,13 @@
 
 <script>
 import MemCard from './MemCard';
+import Timer from './Timer';
 
 export default {
   name: 'MemeGame',
   components: {
-    MemCard
+    MemCard,
+    Timer
   },
   data () {
     return {}

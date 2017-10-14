@@ -54,6 +54,10 @@ const gameModule = {
       url: 'https://placekitten.com/380/200',
       text: 'sdas',
     },
+    raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
+    stage: true, /* 1 - mozhem, 0 - ne mozhem */
+    winners_id: [],
+    memes_img: [],
   },
   actions: {
     socket_chooseMem: (context, mem) => {
@@ -75,7 +79,19 @@ const gameModule = {
     },
     currentRight(state) {
       return state.currentRight;
-    }
+    },
+    stage(state) {
+      return state.stage;
+    },
+    raund(state) {
+      return state.raund;
+    },
+    winners_id(winners_id) {
+      return state.winners_id;
+    },
+    winners_img(winners_id) {
+      return state.winners_img;
+    },
   },
   modules: {}
 };
