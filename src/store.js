@@ -13,7 +13,17 @@ const userModule = {
 
   actions: {},
   mutations: {},
-  getters: {},
+  getters: {
+    username(state) {
+      return state.username
+    },
+    coins(state) {
+      return state.coins
+    },
+    avatar(state) {
+      return state.avatar
+    },
+  },
   modules: {}
 };
 
