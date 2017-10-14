@@ -8,21 +8,19 @@ const userModule = {
   state: {
     username: '',
     coins: 0,
-    avatar: '',
+    avatar: 'https://avatars2.githubusercontent.com/u/22221382?s=460&v=4',
   },
 
   actions: {
-    setUsername({commit}, username) {
-      commit('SET_USERNAME', username)
+    setUser({commit}, userData) {
+      commit('SET_USER_DATA', userData)
     }
   },
   mutations: {
-    SET_USERNAME(state, username) {
+    SET_USER_DATA(state, {username, avatarURL}) {
       state.username = username;
+      state.avatar = avatarURL;
     },
-    SET_AVATAR(state, avatarUrl) {
-      state.avatar = avatarUrl;
-    }
   },
   getters: {
     username(state) {

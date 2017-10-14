@@ -1,8 +1,10 @@
 <template>
   <div class="user">
-    <h4>{{ newUsername }}</h4>
+    <h4>{{ username }}</h4>
+    <img :src="avatar" alt="Avatar"/>
     <input v-model=newUsername type="text">
-    <button @click="setUsername">Submit</button>
+    <input v-model=avatarURL type="text">
+    <button @click="submit">Submit</button>
   </div>
 </template>
 
@@ -11,17 +13,25 @@
     name: 'User',
     data() {
       return {
-        newUsername: 'Unknown'
+        newUsername: 'Unknown',
+        avatarURL: '',
       }
     },
     computed: {
       username() {
         return this.$store.getters.username;
+      },
+      avatar() {
+        return this.$store.getters.avatar;
       }
     },
     methods: {
-      setUsername() {
-        this.$store.dispatch('setUsername', this.data.newUsername)
+      submit() {
+        const userData = {
+          username: this.$data.newUsername,
+          avatarURL: this.$data.avatarURL
+        };
+        this.$store.dispatch('setUser', userData);
       }
     }
   }
