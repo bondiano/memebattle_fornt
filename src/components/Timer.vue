@@ -12,7 +12,7 @@
         },
         computed: {
             checked() {
-                return this.$store.getters.stage;
+                return this.$store.getters.timer;
             },
         }
     }

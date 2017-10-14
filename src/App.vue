@@ -19,7 +19,7 @@
         </b-container>
 </b-navbar>
     <router-view/>
-    <footer>
+    <footer class="footer">
       <b-container class="bv-example-row">
     <b-row class="text-center">
       <b-col><img src="" alt="logo"></b-col>
@@ -105,6 +105,10 @@ footer .text{
 }
 footer{
   background-color: #000000 !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
 }
 footer .text.under{
   color: #484c5e !important;

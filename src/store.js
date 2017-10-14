@@ -55,7 +55,7 @@ const gameModule = {
       text: 'sdas',
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
-    stage: true, /* 1 - mozhem, 0 - ne mozhem */
+    timer: true, /* 1 - mozhem, 0 - ne mozhem */
     winners_id: [],
     memes_img: [],
   },
@@ -80,8 +80,8 @@ const gameModule = {
     currentRight(state) {
       return state.currentRight;
     },
-    stage(state) {
-      return state.stage;
+    timer(state) {
+      return state.timer;
     },
     raund(state) {
       return state.raund;
