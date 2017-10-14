@@ -5,14 +5,14 @@
 
       </timer>
     </b-container>
-    <b-container class="bv-example-row">
+    <b-container class="bv-example-row" center>
       <b-row class="text-center">
     <b-card-group deck>
-      <mem-card :al="left">
+      <mem-card position="left">
         
       </mem-card>
 
-      <mem-card :al="right">
+      <mem-card position="right">
 
       </mem-card>
     </b-card-group>

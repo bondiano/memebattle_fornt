@@ -2,10 +2,9 @@
   <div>
      <b-card no-body
             style="max-width: 20rem;"
-            img-src="https://placekitten.com/380/200"
+            :img-src="image.url"
             img-alt="Image"
             img-top>
-
             <p v-if="text" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <b-button href="#" variant="primary">Test button</b-button>
         </b-card>
@@ -16,7 +15,7 @@
 <script>
   export default {
     name: 'UserChooseModal',
-    props: ['al'],
+    props: ['position'],
     data() {
       return {
 //        image: ''
@@ -24,7 +23,12 @@
     },
     computed: {
       image() {
-        return al === 'left' ? this.$store.getters.currentLeft : this.$store.getters.currentRight;
+      console.log(this.position);
+        if(this.position == 'left'){
+          return this.$store.getters.currentLeft 
+        }else if(this.position == 'right'){
+          return this.$store.getters.currentRight;
+        }
       }
     },
     methods: {
