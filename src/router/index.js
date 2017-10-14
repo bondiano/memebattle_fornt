@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import MemeGame from '@/components/MemeGame'
 import About from '@/components/About'
 import Rules from '@/components/Rules'
-import User from '@/components/User'
+import UserChooseModal from '@/components/UserChooseModal'
 
 Vue.use(Router);
 
@@ -17,7 +17,7 @@ export default new Router({
     {
       path: '/user',
       name: 'user',
-      component: User
+      component: UserChooseModal
     },
     {
       path: '/about',
