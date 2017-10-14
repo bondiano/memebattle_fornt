@@ -11,8 +11,19 @@ const userModule = {
     avatar: '',
   },
 
-  actions: {},
-  mutations: {},
+  actions: {
+    setUsername({commit}, username) {
+      commit('SET_USERNAME', username)
+    }
+  },
+  mutations: {
+    SET_USERNAME(state, username) {
+      state.username = username;
+    },
+    SET_AVATAR(state, avatarUrl) {
+      state.avatar = avatarUrl;
+    }
+  },
   getters: {
     username(state) {
       return state.username
