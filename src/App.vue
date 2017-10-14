@@ -4,11 +4,13 @@
       <b-nav-toggle target="nav_collapse"></b-nav-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-nav>
-          <b-nav-item href="#/rulels">Правила</b-nav-item>
+          <b-nav-item href="#/rules">Правила</b-nav-item>
           <b-nav-item href="#/about">О нас</b-nav-item>
         </b-nav>
       </b-collapse>
-      <b-nav-text class="user_name">{{ username }} {{ coins }}</b-nav-text>
+      <b-nav-text class="user_name">{{ username }} </b-nav-text>
+      <b-nav-text class="user_name"><img src="./assets/coin.png" alt="coin" srcset="" class="coin"></b-nav-text>
+      <b-nav-text class="user_name">{{ coins }}</b-nav-text>
         <b-nav>
           <b-nav-item href="#/" class="sm"><img :src= "avatar" alt="Avatar" class="avatar"></b-nav-item>
         </b-nav>
@@ -56,19 +58,26 @@ export default {
   height: 65px;
   border-radius: 100%;
 }
+#contaner-warp{
+}
 .navbar{
   padding: 4px !important;
 }
 .nav{
   padding: 0px !important;
 }
+
 .navbar{
   background-color: #000000 !important;
 }
 a.nav-link {
-    padding: 0px !important;
+    padding: 3px 16px 3px 16px !important;
 }
 .user_name{
   color: #3d60e3;
+  padding-left: 5px;
+}
+.coin{
+  height: 20px;
 }
 </style>
