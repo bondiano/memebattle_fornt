@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <b-navbar toggleable="md" type="dark" variant="info" class="navbar">
-      <b-contaner class="bv-example-row"></b-contaner>
+      <b-container class="bv-example-row"></b-container>
       <b-nav-toggle target="nav_collapse"></b-nav-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-nav>
@@ -11,7 +11,7 @@
         </b-nav>
       </b-collapse>
       <b-nav-text class="text">{{ username }} </b-nav-text>
-      <b-nav-text class="text"><img src="./assets/coin.png" alt="coin" srcset="" class="coin"></b-nav-text>
+      <b-nav-text class="text"><img src="./assets/coin.png" alt="coin" class="coin"></b-nav-text>
       <b-nav-text class="text">{{ coins }}</b-nav-text>
         <b-nav>
           <b-nav-item href="#/" class="sm"><img :src= "avatar" alt="Avatar" class="avatar"></b-nav-item>
