@@ -38,8 +38,8 @@ const userModule = {
 
 const gameModule = {
   state: {
-    currentFirst: {},
-    currentSecond: {},
+    currentLeft: {url: 'https://placekitten.com/380/200'},
+    currentRight: {url: 'https://placekitten.com/380/200'},
   },
   actions: {
     socket_chooseMem: (context, mem) => {
@@ -53,11 +53,11 @@ const gameModule = {
     }
   },
   getters: {
-    currentFirst(state) {
-      return state.currentFirst;
+    currentLeft(state) {
+      return state.currentLeft;
     },
-    currentSecond(state) {
-      return state.currentSecond;
+    currentRight(state) {
+      return state.currentRight;
     }
   },
   modules: {}

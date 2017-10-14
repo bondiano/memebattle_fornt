@@ -1,12 +1,23 @@
 <template>
   <div>
-    <mem-card>
+    <b-container class="bv-example-row">
+      <timer>
 
-    </mem-card>
+      </timer>
+    </b-container>
+    <b-container class="bv-example-row">
+      <b-row class="text-center">
+    <b-card-group deck>
+      <mem-card :al="left">
+        
+      </mem-card>
 
-    <mem-card>
+      <mem-card :al="right">
 
-    </mem-card>
+      </mem-card>
+    </b-card-group>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
