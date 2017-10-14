@@ -37,10 +37,29 @@ const userModule = {
 };
 
 const gameModule = {
-  state: {},
-  actions: {},
-  mutations: {},
-  getters: {},
+  state: {
+    currentFirst: {},
+    currentSecond: {},
+  },
+  actions: {
+    socket_chooseMem: (context, mem) => {
+      context.dispatch('chooseMem', mem);
+      context.commit('CHOOSE_MEM', mem);
+    }
+  },
+  mutations: {
+    CHOOSE_MEM(state, mem) {
+
+    }
+  },
+  getters: {
+    currentFirst(state) {
+      return state.currentFirst;
+    },
+    currentSecond(state) {
+      return state.currentSecond;
+    }
+  },
   modules: {}
 };
 
