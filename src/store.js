@@ -45,12 +45,14 @@ const gameModule = {
     currentLeft: {
       id: undefined,
       likeCount: undefined,
-      url: 'https://placekitten.com/380/200'
+      url: 'https://placekitten.com/380/200',
+      text: '',
     },
     currentRight: {
       id: undefined,
       likeCount: undefined,
-      url: 'https://placekitten.com/380/200'
+      url: 'https://placekitten.com/380/200',
+      text: 'sdas',
     },
   },
   actions: {

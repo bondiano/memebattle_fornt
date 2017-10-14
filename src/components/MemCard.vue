@@ -1,13 +1,15 @@
 <template>
   <div>
+    <a href="">
      <b-card no-body
             style="max-width: 20rem;"
-            :img-src="image.url"
+            :img-src="image"
             img-alt="Image"
             img-top>
-            <p v-if="text" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p v-if="text" class="card-text">{{ text }}</p>
             <b-button href="#" variant="primary">Test button</b-button>
         </b-card>
+    </a>
   </div>
 </template>
 
@@ -23,11 +25,17 @@
     },
     computed: {
       image() {
-      console.log(this.position);
         if(this.position == 'left'){
-          return this.$store.getters.currentLeft 
+          return this.$store.getters.currentLeft.url
         }else if(this.position == 'right'){
-          return this.$store.getters.currentRight;
+          return this.$store.getters.currentRight.url;
+        }
+      },
+      text() {
+        if(this.position == 'left'){
+          return this.$store.getters.currentLeft.text
+        }else if(this.position == 'right'){
+          return this.$store.getters.currentRight.text;
         }
       }
     },
