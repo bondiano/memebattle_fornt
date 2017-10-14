@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(BootstrapVue);
-
+const fs = require('fs');
 Vue.config.productionTip = false;
 //Vue.use(VueSocketio, socketio('http://192.168.0.142:8000'), store);
 
