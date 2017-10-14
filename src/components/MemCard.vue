@@ -1,15 +1,15 @@
 <template>
   <div>
-    <a href="">
+    <div @click="choose">
      <b-card no-body
             style="max-width: 20rem;"
             :img-src="image"
             img-alt="Image"
             img-top>
-            <p v-if="text" class="card-text">{{ text }}</p>
-            <b-button href="#" variant="primary">Test button</b-button>
-        </b-card>
-    </a>
+        <p v-if="text" class="card-text">{{ text }}</p>
+        <b-button href="#" variant="primary">Test button</b-button>
+     </b-card>
+    </div>
   </div>
 </template>
 
@@ -19,29 +19,34 @@
     name: 'UserChooseModal',
     props: ['position'],
     data() {
-      return {
-//        image: ''
-      }
+      return {}
     },
     computed: {
       image() {
-        if(this.position == 'left'){
+        if (this.position === 'left') {
           return this.$store.getters.currentLeft.url
-        }else if(this.position == 'right'){
+        } else if (this.position === 'right') {
           return this.$store.getters.currentRight.url;
         }
       },
       text() {
-        if(this.position == 'left'){
+        if(this.position === 'left'){
           return this.$store.getters.currentLeft.text
-        }else if(this.position == 'right'){
+        }else if(this.position === 'right'){
           return this.$store.getters.currentRight.text;
+        }
+      },
+      id() {
+        if (this.position === 'left') {
+          return this.$store.getters.currentLeft.id
+        } else if (this.position === 'right') {
+          return this.$store.getters.currentRight.id;
         }
       }
     },
     methods: {
       choose() {
-        this.$store.dispatch('socket_chooseMem', {});
+        this.$store.dispatch('socket_chooseMem', this.id);
       }
     }
   }

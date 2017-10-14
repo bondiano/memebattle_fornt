@@ -43,16 +43,16 @@ const userModule = {
 const gameModule = {
   state: {
     currentLeft: {
-      id: undefined,
+      id: 1,
       likeCount: undefined,
       url: 'https://placekitten.com/380/200',
       text: '',
     },
     currentRight: {
-      id: undefined,
+      id: 2,
       likeCount: undefined,
       url: 'https://placekitten.com/380/200',
-      text: 'sdas',
+      text: '',
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
@@ -60,18 +60,24 @@ const gameModule = {
     memes_img: [],
   },
   actions: {
-    socket_chooseMem: (context, mem) => {
-      ws.send(socketActions.chooseMem(mem));
-      context.commit('CHOOSE_MEM', mem);
+    socket_chooseMem: (context, id) => {
+      ws.send(socketActions.chooseMem(id));
+      context.commit('CHOOSE_MEM', id);
     }
   },
   mutations: {
-    CHOOSE_MEM(state, {id, likeCount}) {
+    MEMES_LIKES(state, {id, likeCount}) {
       if (state.currentLeft.id = id)
         state.currentLeft.likeCount = likeCount;
       if (state.currentRight.id = id)
         state.currentRight.likeCount = likeCount;
-    }
+    },
+    START_TIMER(state, {left, right}) {
+
+    },
+    END_TIMER(state) {
+
+    },
   },
   getters: {
     currentLeft(state) {

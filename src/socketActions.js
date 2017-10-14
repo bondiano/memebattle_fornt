@@ -1,7 +1,8 @@
 export default {
-  chooseMem(mem) {
+  chooseMem(id) {
     return JSON.stringify({
-      type: "CHOOSE_MEM"
+      type: "CHOOSE_MEM",
+      id
     });
-  },
+  }
 };
