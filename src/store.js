@@ -1,8 +1,12 @@
 import Vuex from 'vuex';
 import Vue from "vue";
 
+import socketActions from './socketActions';
 
 Vue.use(Vuex);
+
+const ws = new WebSocket("ws://192.168.0.142:8000/ws");
+
 
 const userModule = {
   state: {
@@ -38,18 +42,29 @@ const userModule = {
 
 const gameModule = {
   state: {
-    currentLeft: {url: 'https://placekitten.com/380/200'},
-    currentRight: {url: 'https://placekitten.com/380/200'},
+    currentLeft: {
+      id: undefined,
+      likeCount: undefined,
+      url: 'https://placekitten.com/380/200'
+    },
+    currentRight: {
+      id: undefined,
+      likeCount: undefined,
+      url: 'https://placekitten.com/380/200'
+    },
   },
   actions: {
     socket_chooseMem: (context, mem) => {
-      context.dispatch('chooseMem', mem);
+      ws.send(socketActions.chooseMem(mem));
       context.commit('CHOOSE_MEM', mem);
     }
   },
   mutations: {
-    CHOOSE_MEM(state, mem) {
-
+    CHOOSE_MEM(state, {id, likeCount}) {
+      if (state.currentLeft.id = id)
+        state.currentLeft.likeCount = likeCount;
+      if (state.currentRight.id = id)
+        state.currentRight.likeCount = likeCount;
     }
   },
   getters: {
@@ -84,5 +99,13 @@ const store = new Vuex.Store({
     user: userModule
   }
 });
+
+
+ws.onmessage = async function ({data: msg}) {
+  const action = JSON.parse(msg);
+  const {type, ...data} = action;
+
+  await store.commit(type, data);
+};
 
 export default store;
