@@ -1,23 +1,32 @@
 <template>
   <div id="app">
-
+    <nav class="navbar">
+      <a href="#/rulels">Правила</a>
+      <a href="#/about">О нас</a>
+      <img :src= "avatar" alt="Avatar" class="avatar">
+    </nav>
     <router-view/>
+    <footer></footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  computed: {
+    avatar(){
+      return this.$store.getters.avatar;
+    }
+  }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Roboto', Helvetica;
+}
+.avatar{
+  height: 75px;
+  border-radius: 100%;
 }
 </style>
