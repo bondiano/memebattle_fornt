@@ -5,6 +5,7 @@
       <b-nav-toggle target="nav_collapse"></b-nav-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-nav>
+          <b-nav-item  href="#/">На главную</b-nav-item>
           <b-nav-item href="#/rules" class="text">Правила</b-nav-item>
           <b-nav-item href="#/about" class="text">О нас</b-nav-item>
         </b-nav>
@@ -17,7 +18,6 @@
         </b-nav>
 </b-navbar>
     <router-view/>
-    <a href="#/">На главную</a>
     <footer>
       <b-container class="bv-example-row">
     <b-row class="text-center">
