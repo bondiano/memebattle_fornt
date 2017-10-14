@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <b-navbar toggleable="md" type="dark" variant="info" class="navbar">
-      <b-container class="bv-example-row"></b-container>
+      <b-container class="bv-example-row">
       <b-nav-toggle target="nav_collapse"></b-nav-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-nav>
@@ -16,6 +16,7 @@
         <b-nav>
           <b-nav-item href="#/" class="sm"><img :src= "avatar" alt="Avatar" class="avatar"></b-nav-item>
         </b-nav>
+        </b-container>
 </b-navbar>
     <router-view/>
     <footer>
