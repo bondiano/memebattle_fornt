@@ -1,16 +1,17 @@
 <template>
   <div id="app">
     <b-navbar toggleable="md" type="dark" variant="info" class="navbar">
+      <b-contaner class="bv-example-row"></b-contaner>
       <b-nav-toggle target="nav_collapse"></b-nav-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-nav>
-          <b-nav-item href="#/rules">Правила</b-nav-item>
-          <b-nav-item href="#/about">О нас</b-nav-item>
+          <b-nav-item href="#/rules" class="text">Правила</b-nav-item>
+          <b-nav-item href="#/about" class="text">О нас</b-nav-item>
         </b-nav>
       </b-collapse>
-      <b-nav-text class="user_name">{{ username }} </b-nav-text>
-      <b-nav-text class="user_name"><img src="./assets/coin.png" alt="coin" srcset="" class="coin"></b-nav-text>
-      <b-nav-text class="user_name">{{ coins }}</b-nav-text>
+      <b-nav-text class="text">{{ username }} </b-nav-text>
+      <b-nav-text class="text"><img src="./assets/coin.png" alt="coin" srcset="" class="coin"></b-nav-text>
+      <b-nav-text class="text">{{ coins }}</b-nav-text>
         <b-nav>
           <b-nav-item href="#/" class="sm"><img :src= "avatar" alt="Avatar" class="avatar"></b-nav-item>
         </b-nav>
@@ -18,19 +19,27 @@
     <router-view/>
     <a href="#/">На главную</a>
     <footer>
-      <img src="" alt="logo">
-      <ul>
-        <li><a href="#/about"></a>О нас</li>
-        <li><a href="#/rules"></a>Правила</li>
+      <b-container class="bv-example-row">
+    <b-row class="text-center">
+      <b-col><img src="" alt="logo"></b-col>
+      <b-col><ul>
+        <li><a href="#/about" class="text">О нас</a></li>
+        <li><a href="#/rules" class="text">Правила</a></li>
       </ul>
-      <div>
-        <p>Следи за нами в соц сетях:</p>
-        <a href="http://vk.com/" target="__blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
-        <a href="http://facebook.com/" target="__blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="http://twitter.com" target="__blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      </div>
-      <p>Сделанно специально для FunTech Hackaton</p></footer>
-  </div>
+      </b-col>
+        <b-col>
+        <p class="text">Следи за нами в соц сетях:</p>
+        <a href="http://vk.com/" target="__blank"><i class="text fa fa-vk fa-2x" aria-hidden="true"></i></a>
+        <a href="http://facebook.com/" target="__blank"><i class="text fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+        <a href="http://twitter.com" target="__blank"><i class="text fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+        </b-col>
+    </b-row>
+    <b-row class="text-center">
+        <b-col><p class="text under">Сделанно специально для FunTech Hackaton</p></b-col>
+    </b-row>
+</b-container>
+  </footer>
+</div>
 </template>
 
 <script>
@@ -58,8 +67,7 @@ export default {
   height: 65px;
   border-radius: 100%;
 }
-#contaner-warp{
-}
+
 .navbar{
   padding: 4px !important;
 }
@@ -73,11 +81,32 @@ export default {
 a.nav-link {
     padding: 3px 16px 3px 16px !important;
 }
-.user_name{
-  color: #3d60e3;
+.text{
+  color: #3d60e3 !important;
   padding-left: 5px;
+}
+.text:hover{
+  text-decoration: none;
+  
+}
+footer{
+  padding-top: 5px;
+}
+footer li{
+  list-style: none;
+  text-decoration: underline;
+}
+footer .text{
+  color: white !important;
 }
 .coin{
   height: 20px;
+}
+footer{
+  background-color: #000000 !important;
+}
+footer .text.under{
+  color: #484c5e !important;
+  margin: 5px !important;;
 }
 </style>
