@@ -19,7 +19,7 @@
         </b-container>
 </b-navbar>
     <router-view/>
-    <footer class="footer">
+    <footer>
       <b-container class="bv-example-row">
     <b-row class="text-center">
       <b-col><img src="" alt="logo"></b-col>
@@ -38,7 +38,7 @@
     <b-row class="text-center">
         <b-col><p class="text under">Сделанно специально для FunTech Hackaton</p></b-col>
     </b-row>
-</b-container>
+    </b-container>
   </footer>
 </div>
 </template>
@@ -105,10 +105,9 @@ footer .text{
 }
 footer{
   background-color: #000000 !important;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
-  height: 10vh;
 }
 footer .text.under{
   color: #484c5e !important;

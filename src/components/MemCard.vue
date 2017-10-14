@@ -2,12 +2,14 @@
   <div>
     <div @click="choose">
      <b-card no-body
-            style="max-width: 20rem;"
+            style="max-width: 25em;"
             :img-src="image"
             img-alt="Image"
-            img-top>
+            img-top
+            class="text-center"
+            id="warped">
         <p v-if="text" class="card-text">{{ text }}</p>
-        <b-button href="#" variant="primary">Test button</b-button>
+        <b-button href="#" variant="primary" class="btn dark">Test button</b-button>
      </b-card>
     </div>
   </div>
@@ -60,4 +62,8 @@
   a{
     text-decoration: none;
   }
+  #warped{
+  margin-bottom: 25px;
+  background-color: #000000;
+}
 </style>
