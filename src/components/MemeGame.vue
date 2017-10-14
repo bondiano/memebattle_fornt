@@ -1,12 +1,17 @@
 <template>
-  <mem-card>
+  <div>
+    <mem-card>
 
-  </mem-card>
+    </mem-card>
+
+    <mem-card>
+
+    </mem-card>
+  </div>
 </template>
 
 <script>
 import MemCard from './MemCard';
-
 
 export default {
   name: 'MemeGame',

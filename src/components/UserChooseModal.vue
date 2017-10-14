@@ -1,6 +1,6 @@
 <template>
   <b-modal v-model="show" hide-footer title="Введите свои данные">
-    <!--<h4>{{ username }}</h4>-->
+    <h4>{{ username }}</h4>
     <img :src="avatar" alt="Avatar"/>
     <input v-model=newUsername type="text" placeholder="Username">
     <input v-model=avatarURL type="text" placeholder="Avatar URL">

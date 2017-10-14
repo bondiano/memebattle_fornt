@@ -29,7 +29,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	background-color: black;
+	background-color: black !important;
+	background-image: url(../src/assets/Bez-imeni-1.jpg);
+	background-repeat: no-repeat;
 	line-height: 1;
 }
 ol, ul {
