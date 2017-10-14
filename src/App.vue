@@ -28,12 +28,19 @@
         <a href="http://twitter.com" target="__blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
       </div>
       <p>Сделанно специально для FunTech Hackaton</p></footer>
+    <footer></footer>
+    <UserChooseModal />
   </div>
 </template>
 
 <script>
+import UserChooseModal from './components/UserChooseModal';
+
 export default {
   name: 'app',
+  components: {
+    UserChooseModal
+  },
   computed: {
     avatar(){
       return this.$store.getters.avatar;
