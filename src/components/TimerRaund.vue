@@ -16,6 +16,7 @@
         </ul>
         </div>
        </b-col>
+       <b-col></b-col>
     <!-- <b-col>
     <img src="../assets/Pacman.svg"></svg>
     </b-col> -->

@@ -21,14 +21,14 @@
       </b-row>
     </b-container>
     </div>
-    <div v-if="stage == 2">
+    <div v-if="stage === 2">
       <!-- After raund -->
       <timer-after-raund>
       </timer-after-raund>
       <game-table>
       </game-table>
     </div>
-        <div v-if="stage == 3">
+        <div v-if="stage === 3">
       <!-- Show winner -->
 
     </div>
