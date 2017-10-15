@@ -2,6 +2,8 @@
 
 function prepareSocket(data) {
   data.user = {
+    username: window.localStorage.getItem('username'),
+    password: window.localStorage.getItem('password'),
   };
   return data
 }

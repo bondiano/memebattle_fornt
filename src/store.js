@@ -29,9 +29,10 @@ const userModule = {
         commit('ERR_LOGIN')
       }
     },
-    async register({commit}, userData) {
+    async register({commit, dispatch}, userData) {
       try {
         const {data} = await registerFetch(userData);
+        dispatch('login', userData)
       } catch (err) {
         commit('ERR_REGISTER', data)
       }
@@ -88,8 +89,15 @@ const gameModule = {
       memes_id: 0,
       memes_img: '',
     },
-    winners_memes: [{memes_id:0,memes_img:'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg'},
-    {memes_id:1,memes_img:'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg'}] ,
+    winners_memes: [
+      {
+        memes_id:0,
+        memes_img:'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg'
+      },
+      {
+        memes_id:1,memes_img:'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg'
+      }
+    ] ,
   },
   actions: {
     socket_chooseMem: (context, id) => {
@@ -98,10 +106,12 @@ const gameModule = {
   },
   mutations: {
     MEMES_LIKES(state, data) {
-      if (state.currentLeft.id = data[0].memes)
-        state.currentLeft.likeCount = data[0].likes;
-      if (state.currentRight.id = data[1].memes)
+      if (state.currentLeft.id = data[0].id)
+        // state.currentLeft.likeCount = data[0].likes;
+        state.currentLeft.likeCount = 100;
+      if (state.currentRight.id = data[1].id)
         state.currentRight.likeCount = data[1].likes;
+      console.log(state)
     },
     START_TIMER(state, data) {
       state.currentLeft.id = data[0].id;
@@ -170,6 +180,7 @@ const store = new Vuex.Store({
 
 ws.onmessage = async function ({data: msg}) {
   const action = JSON.parse(msg);
+  console.log(action)
   const {type, data} = action;
   await store.commit(type, data);
 };
