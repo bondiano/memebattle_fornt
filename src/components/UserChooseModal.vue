@@ -37,19 +37,21 @@
         return this.$store.getters.avatar;
       },
       nameState() {
-        return this.newUsername.length > 2 ? null : false;
+        return this.newUsername.replace(/\s/g, '').length > 2 ? null : false;
       }
     },
     methods: {
       submit() {
-        const userData = {
-          username: this.$data.newUsername,
-          avatarURL: this.$data.avatarURL
-        };
-        this.$store.dispatch('setUser', userData);
-        window.localStorage.setItem('username', this.$data.newUsername)
-        this.$refs.userModalRef.hide();
-      }
+        if(this.newUsername.replace(/\s/g, '').length > 2){
+            const userData = {
+              username: this.$data.newUsername,
+              avatarURL: this.$data.avatarURL
+            };
+            this.$store.dispatch('setUser', userData);
+            window.localStorage.setItem('username', this.$data.newUsername)
+            this.$refs.userModalRef.hide();
+          } 
+        }
     }
   }
 </script>
