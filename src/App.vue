@@ -24,7 +24,7 @@
     <footer class="footer" id="bottom-footer">
       <b-container class="bv-example-row">
     <b-row class="text-center">
-      <b-col><img src="" alt="logo"></b-col>
+      <b-col><img src="./assets/Pacman.svg" alt="logo" width="75px"></b-col>
       <b-col><ul>
         <li><a href="#/about" class="text">О нас</a></li>
         <li><a href="#/rules" class="text">Правила</a></li>

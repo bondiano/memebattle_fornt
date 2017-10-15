@@ -1,8 +1,9 @@
 <template>
   <div>
+    <div v-if="stage === 1">
     <b-container class="bv-example-row">
-      <timer>
-      </timer>
+      <timer-raund>
+      </timer-raund>
     </b-container>
     <b-container class="bv-example-row" center>
       <b-row align-h="center">
@@ -18,21 +19,29 @@
     </b-card-group>
       </b-row>
     </b-container>
+    </div>
   </div>
 </template>
 
 <script>
 import MemCard from './MemCard';
-import Timer from './Timer';
+import TimerAfterRaund from './TimerAfterRaund';
+import TimerRaund from './TimerRaund';
 
 export default {
   name: 'MemeGame',
   components: {
     MemCard,
-    Timer
+    TimerAfterRaund,
+    TimerRaund,
   },
   data () {
     return {}
+  },
+  computed: {
+  stage() {
+    return this.$store.getters.stage;
+      },
   }
 }
 </script>

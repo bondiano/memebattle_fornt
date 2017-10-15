@@ -26,7 +26,7 @@
 
 <script>
     export default {
-        name: 'Timer',
+        name: 'TimerAfterRaund',
          data() {
             return {
 //        image: ''
