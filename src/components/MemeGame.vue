@@ -2,19 +2,19 @@
   <div>
     <b-container class="bv-example-row">
       <timer>
-
       </timer>
     </b-container>
     <b-container class="bv-example-row" center>
-      <b-row class="text-center">
+      <b-row align-h="center">
     <b-card-group deck>
+      <b-col align-self="start">
       <mem-card position="left">
-        
       </mem-card>
-
+      </b-col>
+      <b-col align-self="end">
       <mem-card position="right">
-
       </mem-card>
+      </b-col>
     </b-card-group>
       </b-row>
     </b-container>

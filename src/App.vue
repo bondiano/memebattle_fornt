@@ -18,8 +18,10 @@
         </b-nav>
         </b-container>
 </b-navbar>
+    <div class="content">
     <router-view/>
-    <footer class="footer">
+    </div>
+    <footer class="footer" id="bottom-footer">
       <b-container class="bv-example-row">
     <b-row class="text-center">
       <b-col><img src="" alt="logo"></b-col>
@@ -34,11 +36,10 @@
         <a href="http://facebook.com/" target="__blank"><i class="text fa fa-facebook fa-2x" aria-hidden="true"></i></a>
         <a href="http://twitter.com" target="__blank"><i class="text fa fa-twitter fa-2x" aria-hidden="true"></i></a>
         </b-col>
-    </b-row>
-    <b-row class="text-center">
+        <div class="w-100"></div>
         <b-col><p class="text under">Сделанно специально для FunTech Hackaton</p></b-col>
     </b-row>
-</b-container>
+    </b-container>
   </footer>
     <user-choose-modal>
     </user-choose-modal>
@@ -112,13 +113,13 @@ footer .text{
 }
 footer{
   background-color: #000000 !important;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
-  height: 10vh;
 }
 footer .text.under{
   color: #484c5e !important;
-  margin: 5px !important;;
+  margin: 5px !important;
+
 }
 </style>

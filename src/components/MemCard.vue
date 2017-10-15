@@ -1,15 +1,14 @@
 <template>
   <div>
-    <div @click="choose">
      <b-card no-body
-            style="max-width: 20rem;"
-            :img-src="image"
-            img-alt="Image"
-            img-top>
-        <p v-if="text" class="card-text">{{ text }}</p>
-        <b-button href="#" variant="primary">Test button</b-button>
+            style="max-width: 35em; margin: 0px 0px 0px 0px;"
+            class="text-center"
+            id="warped">
+    <a @click="choose" class="meme-btn">
+        <b-img :src="image" alt="meme" rounded class="meme-img"/>
+        <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
+    </a>
      </b-card>
-    </div>
   </div>
 </template>
 
@@ -54,10 +53,42 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .wrapper{
+  /* .wrapper{
 
-  }
+  } */
   a{
     text-decoration: none;
   }
+  #warped{
+    background-color: #000000;
+  margin: 0px 0px 25px 0px !important;
+}
+.meme-img{
+  max-height: 500px;
+}
+.meme-btn{
+  padding: 0px !important;
+  border: 3px solid #000 !important;
+  display: block;
+}
+a.meme-btn:active{
+  border: 3px solid #fff !important;
+  display: block !important;
+  line-height: 105% !important;
+  -moz-transition: all 0.5s ease-in-out !important; 
+-webkit-transition: all 0.5s ease-in-out !important;
+-moz-transition: all 0.5s ease-in-out !important;
+-o-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
+}
+a.meme-btn:hover{
+  border: 3px solid #fff !important;
+  display: block !important;
+  line-height: 105% !important;
+  -moz-transition: all 0.5s ease-in-out !important; 
+-webkit-transition: all 0.5s ease-in-out !important;
+-moz-transition: all 0.5s ease-in-out !important;
+-o-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
+}
 </style>

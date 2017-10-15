@@ -45,17 +45,18 @@ const gameModule = {
     currentLeft: {
       id: 1,
       likeCount: undefined,
-      url: 'https://placekitten.com/380/200',
-      text: '',
+      url: 'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg',
+      text: 'some text',
     },
     currentRight: {
       id: 2,
       likeCount: undefined,
-      url: 'https://placekitten.com/380/200',
+      url: 'https://sun9-18.userapi.com/c540100/v540100047/37563/dcL97mV6KoM.jpg',
       text: '',
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
+    stage: 1,
     winners_id: [],
     memes_img: [],
   },
@@ -92,10 +93,13 @@ const gameModule = {
     raund(state) {
       return state.raund;
     },
-    winners_id(winners_id) {
+    winners_id(state) {
       return state.winners_id;
     },
-    winners_img(winners_id) {
+    winners_img(state) {
+      return state.winners_img;
+    },
+    stage(state){
       return state.winners_img;
     },
   },

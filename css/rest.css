@@ -34,6 +34,39 @@ body {
 	background-repeat: no-repeat;
 	line-height: 1;
 }
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+@media screen and (max-width: 576px){
+	/* #bottom-footer {
+
+	} */
+  }
+  @media screen and (min-width: 577px) and (max-width: 1199px){
+	/* #bottom-footer {
+
+	} */
+  }
+
+  @media screen and (min-width: 1200px) {
+	#bottom-footer {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 15vh;
+		width: 100%;
+  }
+  body{
+	margin: 0 0 15vh;
+  }
+.content {
+	padding: 20px;
+	min-height: 100%;
+	margin: 0 auto 15vh; 
+}
+}
 ol, ul {
 	list-style: none;
 }
