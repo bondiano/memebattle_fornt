@@ -75,13 +75,16 @@ const gameModule = {
       likeCount: undefined,
       url: 'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg',
       text: 'some text',
+      isWinner: false,
     },
     currentRight: {
       id: 2,
       likeCount: undefined,
       url: 'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg',
       text: '',
+      isWinner: false,
     },
+
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
     stage: 1, /* 1-raund, 2-after-raund(table) 3-winner-time */
@@ -102,9 +105,9 @@ const gameModule = {
   },
   mutations: {
     MEMES_LIKES(state, data) {
-      if (state.currentLeft.id = data[0].id)
+      if (state.currentLeft.id === data[0].id)
         state.currentLeft.likeCount = data[0].likes;
-      if (state.currentRight.id = data[1].id)
+      if (state.currentRight.id === data[1].id)
         state.currentRight.likeCount = data[1].likes;
       console.log(state)
     },
@@ -115,15 +118,19 @@ const gameModule = {
       state.currentRight.url = data[1].url;
       state.timer = true;
     },
-    END_TIMER(state, {winner_id, coins, winner_img}) {
+    END_TIMER(state, {winner_id, coins}) {
       state.timer = false;
       state.coins = coins;
-      state.winners_memes.push({memes_id: winner_id,memes_img:winner_img});
+      if (state.currentLeft.id === winner_id){
+        state.currentLeft.id = winner_id;
+      }else if(state.currentRight.id === winner_id){
+        state.currentLeft.id = winner_id;
+      }
     },
-    CURRENT_RAUND(state, {raund}){
+    STAGE(state, {raund, stage}){
       state.raund = raund;
+      state.stage = stage;
     },
-    
   },
   getters: {
     currentLeft(state) {
