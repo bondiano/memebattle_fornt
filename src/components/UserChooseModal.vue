@@ -46,6 +46,7 @@
           avatarURL: this.$data.avatarURL
         };
         this.$store.dispatch('setUser', userData);
+        window.localStorage.setItem('username', this.$data.newUsername)
         this.$refs.userModalRef.hide();
       }
     }

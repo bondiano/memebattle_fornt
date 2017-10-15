@@ -1,11 +1,14 @@
 <template>
   <div>
+    <div v-if="typeof mem.likeCount !== 'undefined'">
+      <h1>{{ mem.likeCount }}</h1>
+    </div>
      <b-card no-body
             style="max-width: 35em; margin: 0px 0px 0px 0px;"
             class="text-center"
             id="warped">
     <a @click="choose" class="meme-btn">
-        <b-img :src="image" alt="meme" rounded class="meme-img"/>
+        <b-img :src="mem.url" alt="meme" rounded class="meme-img"/>
         <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
     </a>
      </b-card>
@@ -21,31 +24,17 @@
       return {}
     },
     computed: {
-      image() {
+      mem() {
         if (this.position === 'left') {
-          return this.$store.getters.currentLeft.url
+          return this.$store.getters.currentLeft;
         } else if (this.position === 'right') {
-          return this.$store.getters.currentRight.url;
-        }
-      },
-      text() {
-        if(this.position === 'left'){
-          return this.$store.getters.currentLeft.text
-        }else if(this.position === 'right'){
-          return this.$store.getters.currentRight.text;
-        }
-      },
-      id() {
-        if (this.position === 'left') {
-          return this.$store.getters.currentLeft.id
-        } else if (this.position === 'right') {
-          return this.$store.getters.currentRight.id;
+          return this.$store.getters.currentRight;
         }
       }
     },
     methods: {
       choose() {
-        this.$store.dispatch('socket_chooseMem', this.id);
+        this.$store.dispatch('socket_chooseMem', this.mem.id);
       }
     }
   }
@@ -75,7 +64,7 @@ a.meme-btn:active{
   border: 3px solid #fff !important;
   display: block !important;
   line-height: 105% !important;
-  -moz-transition: all 0.5s ease-in-out !important; 
+  -moz-transition: all 0.5s ease-in-out !important;
 -webkit-transition: all 0.5s ease-in-out !important;
 -moz-transition: all 0.5s ease-in-out !important;
 -o-transition: all 0.5s ease-in-out !important;
@@ -85,7 +74,7 @@ a.meme-btn:hover{
   border: 3px solid #fff !important;
   display: block !important;
   line-height: 105% !important;
-  -moz-transition: all 0.5s ease-in-out !important; 
+  -moz-transition: all 0.5s ease-in-out !important;
 -webkit-transition: all 0.5s ease-in-out !important;
 -moz-transition: all 0.5s ease-in-out !important;
 -o-transition: all 0.5s ease-in-out !important;

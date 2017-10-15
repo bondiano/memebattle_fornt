@@ -10,7 +10,7 @@ const ws = new WebSocket("ws://192.168.0.142:8000/ws");
 
 const userModule = {
   state: {
-    username: 'Meow',
+    username: window.localStorage.getItem('username') || 'Meow',
     coins: 500,
     avatar: 'https://avatars2.githubusercontent.com/u/22221382?s=460&v=4',
   },
@@ -66,12 +66,11 @@ const gameModule = {
     }
   },
   mutations: {
-    MEMES_LIKES(state, data) {
-      // console.log(data)
-      // if (state.currentLeft.id = id)
-      //   state.currentLeft.likeCount = likeCount;
-      // if (state.currentRight.id = id)
-      //   state.currentRight.likeCount = likeCount;
+    MEMES_LIKES(state, {data}) {
+      if (state.currentLeft.id = data[0].memes)
+        state.currentLeft.likeCount = data[0].likes;
+      if (state.currentRight.id = data[1].memes)
+        state.currentRight.likeCount = data[1].likes;
     },
     START_TIMER(state, {left, right}) {
 
