@@ -18,9 +18,6 @@ const userModule = {
   },
 
   actions: {
-    // setUser({commit}, userData) {
-    //   commit('SET_USER_DATA', userData)
-    // },
     async login({commit}, userData) {
       try {
         const {data} = await loginFetch(userData);
@@ -107,11 +104,9 @@ const gameModule = {
   mutations: {
     MEMES_LIKES(state, data) {
       if (state.currentLeft.id = data[0].id)
-        // state.currentLeft.likeCount = data[0].likes;
-        state.currentLeft.likeCount = 100;
+        state.currentLeft.likeCount = data[0].likes;
       if (state.currentRight.id = data[1].id)
         state.currentRight.likeCount = data[1].likes;
-      console.log(state)
     },
     START_TIMER(state, data) {
       state.currentLeft.id = data[0].id;
@@ -177,10 +172,12 @@ const store = new Vuex.Store({
   }
 });
 
+ws.onopen = function() {
+  ws.send(socketActions.getStage());
+};
 
 ws.onmessage = async function ({data: msg}) {
   const action = JSON.parse(msg);
-  console.log(action)
   const {type, data} = action;
   await store.commit(type, data);
 };

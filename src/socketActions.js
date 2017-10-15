@@ -15,5 +15,10 @@ export default {
       type: "CHOOSE_MEM",
       id
     }));
-  }
+  },
+  getStage() {
+    return JSON.stringify(prepareSocket({
+      type: "GET_STAGE",
+    }));
+  },
 };
