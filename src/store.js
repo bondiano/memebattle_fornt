@@ -185,6 +185,7 @@ ws.onopen = function() {
 
 ws.onmessage = async function ({data: msg}) {
   const action = JSON.parse(msg);
+  console.log(msg)
   const {type, data} = action;
   await store.commit(type, data);
 };

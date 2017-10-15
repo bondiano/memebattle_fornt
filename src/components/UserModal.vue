@@ -1,16 +1,13 @@
 <template>
   <b-modal id="userModal"
            ref="userModalRef"
-           hide-header
+           hide-header-close
            :close-on-backdrop="false"
            :no-close-on-esc="false"
+           :title="modalTitle"
            hide-footer >
 
     <div class="d-block text-center">
-      <div class="">
-        <span v-if="!registered" v-on:click="registered = !registered">Sign in</span>
-        <span v-if="registered" v-on:click="registered =!registered">Sign up</span>
-      </div>
       <b-form v-if="registered">
         <b-form-group id="usernameGroup"
                       label-for="usernameInput">
@@ -80,7 +77,11 @@
         </b-form-group>
       </b-form>
     </div>
-    <b-btn class="mt-3" variant="outline-danger" block @click="setIsLogin" @keyup.enter="submit">
+    <div class="mt-3 float-left btn btn-secondary" v-on:click="registered = !registered">
+      <span v-if="!registered">Sign in</span>
+      <span v-if="registered">Sign up</span>
+    </div>
+    <b-btn class="mt-3 float-right btn-login" variant="success" @click="setIsLogin" @keyup.enter="submit">
       <span v-if="registered">Login</span>
       <span v-if="!registered">Register and Login</span>
     </b-btn>
@@ -112,6 +113,9 @@
       },
       passwordAgainState() {
         return this.passwordAgain.length > 5 ? null : false;
+      },
+      modalTitle() {
+          return this.$data.registered ? 'Sign In' : 'Sign Up';
       },
       isLogin() {
 //          return this.$store.getters.isLogin
@@ -152,5 +156,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.btn-login {
+  width: 80%;
+}
 </style>
