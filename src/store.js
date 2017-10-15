@@ -1,5 +1,6 @@
 import Vuex from 'vuex';
 import Vue from "vue";
+import {loginFetch, registerFetch} from './request';
 
 import socketActions from './socketActions';
 
@@ -10,25 +11,51 @@ const ws = new WebSocket("ws://192.168.0.142:8000/ws");
 
 const userModule = {
   state: {
-    username: window.localStorage.getItem('username') || 'Meow',
-    coins: 500,
+    username: 'Meow',
+    coins: 0,
+    isLogin: false,
     avatar: 'https://avatars2.githubusercontent.com/u/22221382?s=460&v=4',
   },
 
   actions: {
-    setUser({commit}, userData) {
-      commit('SET_USER_DATA', userData)
+    // setUser({commit}, userData) {
+    //   commit('SET_USER_DATA', userData)
+    // },
+    async login({commit}, userData) {
+      try {
+        const {data} = await loginFetch(userData);
+        commit('SUC_LOGIN', data)
+      } catch (err) {
+        commit('ERR_LOGIN')
+      }
+    },
+    async register({commit}, userData) {
+      try {
+        const {data} = await registerFetch(userData);
+      } catch (err) {
+        commit('ERR_REGISTER', data)
+      }
+
     }
   },
   mutations: {
-    SET_USER_DATA(state, {username, avatarURL}) {
+    SUC_LOGIN(state, {username, coins}) {
+      state.isLogin = true;
       state.username = username;
-      // state.avatar = avatarURL;
+      state.coins = coins;
+    },
+    ERR_LOGIN(state) {
+      window.localStorage.removeItem('username');
+      window.localStorage.removeItem('password');
+      state.isLogin = false;
     },
   },
   getters: {
     username(state) {
       return state.username
+    },
+    isLogin(state) {
+      return state.isLogin
     },
     coins(state) {
       return state.coins
@@ -70,17 +97,23 @@ const gameModule = {
     }
   },
   mutations: {
-    MEMES_LIKES(state, {data}) {
+    MEMES_LIKES(state, data) {
       if (state.currentLeft.id = data[0].memes)
         state.currentLeft.likeCount = data[0].likes;
       if (state.currentRight.id = data[1].memes)
         state.currentRight.likeCount = data[1].likes;
     },
-    START_TIMER(state, {left, right}) {
-
+    START_TIMER(state, data) {
+      state.currentLeft.id = data[0].id;
+      state.currentLeft.url = data[0].url;
+      state.currentRight.id = data[1].id;
+      state.currentRight.url = data[1].url;
+      state.timer = true;
     },
-    END_TIMER(state) {
-
+    END_TIMER(state, {winner_id, coins}) {
+      state.timer = false;
+      state.coins = coins;
+      state.winner_id = winner_id;
     },
   },
   getters: {
@@ -137,8 +170,7 @@ const store = new Vuex.Store({
 
 ws.onmessage = async function ({data: msg}) {
   const action = JSON.parse(msg);
-  const {type, ...data} = action;
-
+  const {type, data} = action;
   await store.commit(type, data);
 };
 

@@ -41,18 +41,18 @@
     </b-row>
     </b-container>
   </footer>
-    <user-choose-modal>
-    </user-choose-modal>
+    <user-modal>
+    </user-modal>
 </div>
 </template>
 
 <script>
-import UserChooseModal from './components/UserChooseModal.vue';
+import UserModal from './components/UserModal.vue';
 
 export default {
   name: 'app',
   components: {
-      UserChooseModal
+      UserModal
   },
   computed: {
     avatar(){

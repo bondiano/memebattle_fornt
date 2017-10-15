@@ -19,7 +19,7 @@
 
 <script>
   export default {
-    name: 'UserChooseModal',
+    name: 'UserModal',
     props: ['position'],
     data() {
       return {}
@@ -31,6 +31,9 @@
         } else if (this.position === 'right') {
           return this.$store.getters.currentRight;
         }
+      },
+      isWinner() {
+          return this.mem.id === this.$store.getters.winner_id;
       }
     },
     methods: {

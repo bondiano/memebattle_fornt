@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import MemeGame from '@/components/MemeGame'
 import About from '@/components/About'
 import Rules from '@/components/Rules'
-import UserChooseModal from '@/components/UserChooseModal'
+import UserChooseModal from '@/components/UserModal'
 
 Vue.use(Router);
 
