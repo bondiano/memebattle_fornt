@@ -55,7 +55,8 @@
   margin: 0px 0px 25px 0px !important;
 }
 .meme-img{
-  height: 400px;
+  height: 350px;
+  object-fit: cover;
 }
 .meme-btn{
   padding: 0px !important;

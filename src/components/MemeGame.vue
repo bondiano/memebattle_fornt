@@ -30,7 +30,7 @@
     </div>
         <div v-if="stage === 3">
       <!-- Show winner -->
-
+      <winner></winner>  
     </div>
   </div>
 </template>
@@ -40,6 +40,7 @@ import MemCard from './MemCard';
 import TimerAfterRaund from './TimerAfterRaund';
 import TimerRaund from './TimerRaund';
 import GameTable from './GameTable';
+import Winner from './Winner';
 
 export default {
   name: 'MemeGame',
@@ -48,6 +49,7 @@ export default {
     TimerAfterRaund,
     TimerRaund,
     GameTable,
+    Winner,
   },
   data () {
     return {}

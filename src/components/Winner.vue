@@ -1,11 +1,13 @@
 <template>
-    <div v-if='checked'>
+    <div>
         <b-container class="bv-example-row">
             <b-row class="text-center">
               <h1>
                   Победил мем:
               </h1>
-            <b-img :src="winner" alt="meme" rounded/>
+        </b-row>
+        <b-row>
+        <img :src="winners_memes" alt="meme" height="500px"/>
         </b-row>
         </b-container>
     </div>
@@ -20,9 +22,9 @@
             }
         },
         computed: {
-            winner(){
-                return this.$store.getters.winners_memes.url;
-            }
+      winners_memes(){
+        return this.$store.getters.winner_url;
+        },
         }
     }
 </script>

@@ -83,7 +83,7 @@ const gameModule = {
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
-    stage: 1, /* 1-raund, 2-after-raund(table) 3-winner-time */
+    stage: 3, /* 1-raund, 2-after-raund(table) 3-winner-time */
     winners_memes: [
       {
         id:0,
@@ -131,7 +131,11 @@ const gameModule = {
     currentLeft(state) {
       return state.currentLeft;
     },
-    currentRight(state) {
+    currentRight(state) {ws.onmessage = async function ({data: msg}) {
+      const action = JSON.parse(msg);
+      const {type, data} = action;
+      await store.commit(type, data);
+    };
       return state.currentRight;
     },
     timer(state) {
@@ -145,6 +149,9 @@ const gameModule = {
     },
     winners_memes(state){
       return state.winners_memes;
+    },
+    winner_url(state){
+      return state.winners_memes[0].url;
     },
   },
   modules: {}
