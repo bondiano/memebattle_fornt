@@ -72,27 +72,26 @@ const gameModule = {
       likeCount: undefined,
       url: 'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg',
       text: 'some text',
+      isWinner: false,
     },
     currentRight: {
       id: 2,
       likeCount: undefined,
       url: 'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg',
       text: '',
+      isWinner: false,
     },
+
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
     stage: 1, /* 1-raund, 2-after-raund(table) 3-winner-time */
-    meme: {
-      memes_id: 0,
-      memes_img: '',
-    },
     winners_memes: [
       {
-        memes_id:0,
-        memes_img:'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg'
+        id:0,
+        url:'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg'
       },
       {
-        memes_id:1,memes_img:'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg'
+        id:1,url:'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg'
       }
     ] ,
   },
@@ -103,9 +102,9 @@ const gameModule = {
   },
   mutations: {
     MEMES_LIKES(state, data) {
-      if (state.currentLeft.id = data[0].id)
+      if (state.currentLeft.id === data[0].id)
         state.currentLeft.likeCount = data[0].likes;
-      if (state.currentRight.id = data[1].id)
+      if (state.currentRight.id === data[1].id)
         state.currentRight.likeCount = data[1].likes;
     },
     START_TIMER(state, data) {
@@ -118,7 +117,15 @@ const gameModule = {
     END_TIMER(state, {winner_id, coins}) {
       state.timer = false;
       state.coins = coins;
-      state.winner_id = winner_id;
+      if (state.currentLeft.id === winner_id){
+        state.currentLeft.id = winner_id;
+      }else if(state.currentRight.id === winner_id){
+        state.currentLeft.id = winner_id;
+      }
+    },
+    STAGE(state, {raund, stage}){
+      state.raund = raund;
+      state.stage = stage;
     },
   },
   getters: {
@@ -133,12 +140,6 @@ const gameModule = {
     },
     raund(state) {
       return state.raund;
-    },
-    winners_id(state) {
-      return state.winners_id;
-    },
-    winners_img(state) {
-      return state.winners_img;
     },
     stage(state){
       return state.stage;

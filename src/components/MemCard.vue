@@ -1,16 +1,16 @@
 <template>
   <div>
-     <span v-if="typeof mem.likeCount !== 'undefined'" class="meme-likes">Проголосовало: <br> {{ mem.likeCount }}</span>
      <b-card no-body
             style="max-width: 35em; margin: 0px 0px 0px 0px;"
             class="text-center"
             id="warped"
             >
+    <span v-if="typeof mem.likeCount !== 'undefined'" class="meme-likes">Проголосовало: <br> {{ mem.likeCount }}</span>
     <a @click="choose" class="meme-btn">
         <b-img :src="mem.url" alt="meme" rounded class="meme-img" />
         <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
     </a>
-     </b-card>
+    </b-card>
   </div>
 </template>
 
@@ -87,14 +87,13 @@ span.meme-likes {
     display:inline-block;
     position:absolute;
     /*top: 0;*/
-    z-index: 12321;
+    z-index: 2;
     color:#FFF;
     font-family: 'Roboto', Helvetica;
     font-size:30px;
 
     background-color:rgba(0,0,0,.4);
-    width: 100%;
     height: 100%;
-    padding:10px 30px;
+    width: 100%;
 }
 </style>
