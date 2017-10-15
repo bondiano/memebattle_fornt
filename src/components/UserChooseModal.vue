@@ -7,14 +7,15 @@
                     type="text"
                     :state="nameState"
                     aria-describedby="input-help input-feeback"
-                    placeholder="Enter your name"></b-form-input>
+                    placeholder="Enter your name"
+                    @keyup.space="submit"></b-form-input>
       <b-form-feedback id="input-feedback">
         <!-- This will only be shown if the preceeding input has an invalid state -->
         Enter at least 3 letters
       </b-form-feedback>
       <!--<input v-model=newUsername type="text" placeholder="Username">-->
     </div>
-    <b-btn class="mt-3" variant="outline-danger" block @click="submit" @keyup.enter="submit">Submit</b-btn>
+    <b-btn class="mt-3" variant="outline-danger" block @click="submit">Submit</b-btn>
   </b-modal>
 </template>
 
