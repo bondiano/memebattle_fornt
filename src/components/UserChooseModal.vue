@@ -14,8 +14,7 @@
       </b-form-feedback>
       <!--<input v-model=newUsername type="text" placeholder="Username">-->
     </div>
-    <b-btn class="mt-3" variant="outline-danger" block @click="submit">Submit</b-btn>
-
+    <b-btn class="mt-3" variant="outline-danger" block @click="submit" @keyup.enter="submit">Submit</b-btn>
   </b-modal>
 </template>
 
