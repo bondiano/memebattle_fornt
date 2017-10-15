@@ -46,9 +46,10 @@ html{
   }
   @media screen and (min-width: 577px) and (max-width: 1199px){
 	#bottom-footer {
-		
+
 	}
   }
+
   @media screen and (min-width: 1200px) {
 	#bottom-footer {
 		position: absolute;
@@ -58,12 +59,12 @@ html{
 		width: 100%;
   }
   body{
-	margin: 0 0 10vh;
+	margin: 0 0 15vh;
   }
-  .content {
+.content {
 	padding: 20px;
 	min-height: 100%;
-	/* margin: 0 auto -50px; */
+	margin: 0 auto 15vh; 
 }
 }
 ol, ul {

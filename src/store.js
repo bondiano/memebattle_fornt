@@ -45,13 +45,13 @@ const gameModule = {
     currentLeft: {
       id: 1,
       likeCount: undefined,
-      url: 'https://placekitten.com/380/200',
-      text: '',
+      url: 'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg',
+      text: 'some text',
     },
     currentRight: {
       id: 2,
       likeCount: undefined,
-      url: 'https://placekitten.com/380/200',
+      url: 'https://sun9-18.userapi.com/c540100/v540100047/37563/dcL97mV6KoM.jpg',
       text: '',
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */

@@ -2,7 +2,6 @@
   <div>
     <b-container class="bv-example-row">
       <timer>
-
       </timer>
     </b-container>
     <b-container class="bv-example-row" center>

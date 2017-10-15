@@ -1,17 +1,14 @@
 <template>
   <div>
-    <div @click="choose">
      <b-card no-body
-            style="max-width: 25em;"
-            :img-src="image"
-            img-alt="Image"
-            img-top
+            style="max-width: 30em; margin: 0px 0px 0px 0px;"
             class="text-center"
             id="warped">
-        <p v-if="text" class="card-text">{{ text }}</p>
-        <b-button href="#" variant="primary" class="btn dark">Test button</b-button>
+    <a @click="choose" class="meme-btn">
+        <b-img :src="image" alt="meme" rounded class="meme-img"/>
+        <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
+    </a>
      </b-card>
-    </div>
   </div>
 </template>
 
@@ -63,7 +60,19 @@
     text-decoration: none;
   }
   #warped{
-  margin-bottom: 25px;
-  background-color: #000000;
+    background-color: #000000;
+}
+.meme-img{
+  max-height: 500px;
+}
+button.meme-btn{
+  margin: 0px 0px 25px 0px !important;
+  padding: 0px !important;
+  background-color: #ffffff;
+  border-color: #000000;
+}
+button.meme-btn:hover:active{
+  border-color: #000000 !important;
+  border-radius: 1px;
 }
 </style>

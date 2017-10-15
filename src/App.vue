@@ -18,7 +18,9 @@
         </b-nav>
         </b-container>
 </b-navbar>
+    <div class="content">
     <router-view/>
+    </div>
     <footer class="footer" id="bottom-footer">
       <b-container class="bv-example-row">
     <b-row class="text-center">
