@@ -85,17 +85,13 @@ const gameModule = {
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
     stage: 1, /* 1-raund, 2-after-raund(table) 3-winner-time */
-    meme: {
-      memes_id: 0,
-      memes_img: '',
-    },
     winners_memes: [
       {
-        memes_id:0,
-        memes_img:'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg'
+        id:0,
+        url:'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg'
       },
       {
-        memes_id:1,memes_img:'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg'
+        id:1,url:'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg'
       }
     ] ,
   },
@@ -107,8 +103,7 @@ const gameModule = {
   mutations: {
     MEMES_LIKES(state, data) {
       if (state.currentLeft.id = data[0].id)
-        // state.currentLeft.likeCount = data[0].likes;
-        state.currentLeft.likeCount = 100;
+        state.currentLeft.likeCount = data[0].likes;
       if (state.currentRight.id = data[1].id)
         state.currentRight.likeCount = data[1].likes;
       console.log(state)
@@ -125,6 +120,10 @@ const gameModule = {
       state.coins = coins;
       state.winners_memes.push({memes_id: winner_id,memes_img:winner_img});
     },
+    CURRENT_RAUND(state, {raund}){
+      state.raund = raund;
+    },
+    
   },
   getters: {
     currentLeft(state) {
