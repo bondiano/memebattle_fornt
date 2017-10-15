@@ -88,8 +88,8 @@ const gameModule = {
       memes_id: 0,
       memes_img: '',
     },
-    memes: [],
-    winners_id: [],
+    winners_memes: [{memes_id:0,memes_img:'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg'},
+    {memes_id:1,memes_img:'https://pp.userapi.com/c840629/v840629396/148cf/nJpQWyUnmf4.jpg'}] ,
   },
   actions: {
     socket_chooseMem: (context, id) => {
@@ -138,8 +138,8 @@ const gameModule = {
     stage(state){
       return state.stage;
     },
-    memes(state){
-      return state.memes;
+    winners_memes(state){
+      return state.winners_memes;
     },
   },
   modules: {}

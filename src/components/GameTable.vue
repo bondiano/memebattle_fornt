@@ -2,8 +2,8 @@
   <div v-if='checked'>
     <b-container class="bv-example-row">
       <b-row class="text-center">
-         <b-col>
-
+         <b-col v-for="memes in winners_memes" :key="memes.memes_id">
+             <b-img :src="memes.memes_img" alt="meme" rounded width="300px"/>
          </b-col>
       </b-row>
     </b-container>
@@ -13,15 +13,16 @@
 <script>
   export default {
     name: 'GameTable',
-    data:{
-        memes(){
-            return this.$store.getters.memes;
-        }
-    },
+  data () {
+    return {}
+  },
     computed: {
-      checked() {
-        return this.$store.getters.timer;
-      },
+        checked() {
+            return this.$store.getters.timer;
+      },    
+      winners_memes(){
+        return this.$store.getters.winners_memes;
+        },
     }
   }
 
