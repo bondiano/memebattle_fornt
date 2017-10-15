@@ -23,7 +23,7 @@ const userModule = {
   mutations: {
     SET_USER_DATA(state, {username, avatarURL}) {
       state.username = username;
-      state.avatar = avatarURL;
+      // state.avatar = avatarURL;
     },
   },
   getters: {
@@ -62,15 +62,15 @@ const gameModule = {
   actions: {
     socket_chooseMem: (context, id) => {
       ws.send(socketActions.chooseMem(id));
-      context.commit('CHOOSE_MEM', id);
     }
   },
   mutations: {
-    MEMES_LIKES(state, {id, likeCount}) {
-      if (state.currentLeft.id = id)
-        state.currentLeft.likeCount = likeCount;
-      if (state.currentRight.id = id)
-        state.currentRight.likeCount = likeCount;
+    MEMES_LIKES(state, data) {
+      // console.log(data)
+      // if (state.currentLeft.id = id)
+      //   state.currentLeft.likeCount = likeCount;
+      // if (state.currentRight.id = id)
+      //   state.currentRight.likeCount = likeCount;
     },
     START_TIMER(state, {left, right}) {
 

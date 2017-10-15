@@ -14,7 +14,7 @@
       <b-nav-text class="text"><img src="./assets/coin.png" alt="coin" class="coin"></b-nav-text>
       <b-nav-text class="text">{{ coins }}</b-nav-text>
         <b-nav>
-          <b-nav-item href="#/" class="sm"><img :src= "avatar" alt="Avatar" class="avatar"></b-nav-item>
+          <b-nav-item href="#/" class="sm" v-b-modal.userModal><img :src= "avatar" alt="Avatar" class="avatar"></b-nav-item>
         </b-nav>
         </b-container>
 </b-navbar>
@@ -40,12 +40,19 @@
     </b-row>
 </b-container>
   </footer>
+    <user-choose-modal>
+    </user-choose-modal>
 </div>
 </template>
 
 <script>
+import UserChooseModal from './components/UserChooseModal.vue';
+
 export default {
   name: 'app',
+  components: {
+      UserChooseModal
+  },
   computed: {
     avatar(){
       return this.$store.getters.avatar;
@@ -88,7 +95,7 @@ a.nav-link {
 }
 .text:hover{
   text-decoration: none;
-  
+
 }
 footer{
   padding-top: 5px;
