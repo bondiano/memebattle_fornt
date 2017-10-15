@@ -8,7 +8,7 @@
             id="warped"
             >
     <a @click="choose" class="meme-btn">
-        <b-img :src="mem.url" alt="meme" rounded class="meme-img"/>
+        <b-img :src="mem.url" alt="meme" rounded class="meme-img" />
         <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
     </a>
       <span class="meme-likes" v-if="mem.likeCount">Проголосовало: <br> {{ mem.likeCount }}</span>
@@ -54,7 +54,7 @@
   margin: 0px 0px 25px 0px !important;
 }
 .meme-img{
-  max-height: 500px;
+  height: 400px;
 }
 .meme-btn{
   padding: 0px !important;

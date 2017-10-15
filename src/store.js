@@ -51,12 +51,12 @@ const gameModule = {
     currentRight: {
       id: 2,
       likeCount: undefined,
-      url: 'https://sun9-18.userapi.com/c540100/v540100047/37563/dcL97mV6KoM.jpg',
+      url: 'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg',
       text: '',
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
-    stage: 1, /* 1-raund, 2-after-raund(table) 3-winner-time */
+    stage: 2, /* 1-raund, 2-after-raund(table) 3-winner-time */
     winners_id: [],
     memes_img: [],
   },
