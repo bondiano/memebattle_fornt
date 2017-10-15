@@ -1,6 +1,7 @@
 <template>
   <div>
     <div v-if="stage === 1">
+      <!-- Raund -->
     <b-container class="bv-example-row">
       <timer-raund>
       </timer-raund>
@@ -19,6 +20,16 @@
     </b-card-group>
       </b-row>
     </b-container>
+    </div>
+    <div v-if="stage == 2">
+      <!-- After raund -->
+      <timer-after-raund>
+      </timer-after-raund>
+      
+    </div>
+        <div v-if="stage == 3">
+      <!-- Show winner -->
+
     </div>
   </div>
 </template>

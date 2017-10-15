@@ -3,22 +3,28 @@
         <b-container class="bv-example-row">
             <b-row class="text-center">
                 <b-col>
-    <h1>До следующего раунда: </h1>
+    <h1>До следующей пары: </h1>
                 </b-col>
                 <b-col>
         <div class="timer">
         <ul id=timer-ones>
+            <li>0</li>
+            <li>9</li>
+            <li>8</li>
+            <li>7</li>
+            <li>6</li>
             <li>5</li>
             <li>4</li>
             <li>3</li>
             <li>2</li>
             <li>1</li>
         </ul>
+        <ul id=timer-ten>
+            <li>2</li>
+            <li>1</li>
+        </ul>
         </div>
        </b-col>
-    <!-- <b-col>
-    <img src="../assets/Pacman.svg"></svg>
-    </b-col> -->
     </b-row>
         </b-container>
     </div>
