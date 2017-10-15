@@ -11,6 +11,7 @@ function prepareSocket(data) {
 
 export default {
   chooseMem(id) {
+    console.log(id)
     return JSON.stringify(prepareSocket({
       type: "CHOOSE_MEM",
       id

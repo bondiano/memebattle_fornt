@@ -5,12 +5,12 @@
             class="text-center"
             id="warped"
             >
-    <span v-if="typeof mem.likeCount !== 'undefined'" class="meme-likes">Проголосовало: <br> {{ mem.likeCount }}</span>
-    <span v-if="mem.isWinner">Победитель!</span>
-    <a @click="choose" class="meme-btn">
-        <b-img :src="mem.url" alt="meme" rounded class="meme-img" />
-        <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
-    </a>
+      <span v-if="typeof mem.likeCount !== 'undefined'" class="meme-likes">Проголосовало: <br> {{ mem.likeCount }}</span>
+      <span v-if="mem.isWinner" class="text-white font-weight-bold">Победитель!</span>
+      <a @click="choose" class="meme-btn">
+          <b-img :src="mem.url" alt="meme" rounded class="meme-img" />
+          <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
+      </a>
     </b-card>
   </div>
 </template>

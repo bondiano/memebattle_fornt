@@ -79,7 +79,7 @@ const gameModule = {
       likeCount: undefined,
       url: 'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg',
       text: '',
-      isWinner: true,
+      isWinner: false,
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
@@ -101,19 +101,29 @@ const gameModule = {
   },
   mutations: {
     MEMES_LIKES(state, data) {
+      console.log("LIKES")
+      console.log(data)
       if (state.currentLeft.id === data[0].id)
         state.currentLeft.likeCount = data[0].likes;
       if (state.currentRight.id === data[1].id)
         state.currentRight.likeCount = data[1].likes;
     },
     START_TIMER(state, data) {
+      console.log("START")
+      console.log(data)
       state.currentLeft.id = data[0].id;
       state.currentLeft.url = data[0].url;
+      state.currentLeft.isWinner = false;
+      state.currentLeft.likeCount = undefined;
+      state.currentRight.likeCount = undefined;
+      state.currentRight.isWinner = false;
       state.currentRight.id = data[1].id;
       state.currentRight.url = data[1].url;
       state.timer = true;
     },
     END_TIMER(state, {winner_id, coins}) {
+      console.log("END")
+      console.log(winner_id)
       state.timer = false;
       state.coins = coins;
       if (state.currentLeft.id === winner_id){
@@ -183,11 +193,10 @@ ws.onopen = function() {
   ws.send(socketActions.getStage());
 };
 
-ws.onmessage = async function ({data: msg}) {
+ws.onmessage = function ({data: msg}) {
   const action = JSON.parse(msg);
-  console.log(msg)
   const {type, data} = action;
-  await store.commit(type, data);
+  store.commit(type, data);
 };
 
 export default store;
