@@ -81,7 +81,6 @@ const gameModule = {
       text: '',
       isWinner: false,
     },
-
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
     stage: 1, /* 1-raund, 2-after-raund(table) 3-winner-time */
