@@ -79,7 +79,7 @@ const gameModule = {
       likeCount: undefined,
       url: 'https://pp.userapi.com/c840733/v840733952/13e8b/C_aOIq5vv9U.jpg',
       text: '',
-      isWinner: false,
+      isWinner: true,
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
@@ -117,9 +117,9 @@ const gameModule = {
       state.timer = false;
       state.coins = coins;
       if (state.currentLeft.id === winner_id){
-        state.currentLeft.id = winner_id;
+        state.currentLeft.isWinner = true;
       }else if(state.currentRight.id === winner_id){
-        state.currentLeft.id = winner_id;
+        state.currentRight.isWinner = true;
       }
     },
     STAGE(state, {raund, stage}){

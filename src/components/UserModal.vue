@@ -36,7 +36,7 @@
         </b-form-group>
       </b-form>
 
-      <b-form v-if="!registered" @submit="">
+      <b-form v-if="!registered">
         <b-form-group id="usernameGroup"
                       label-for="usernameInput">
           <b-form-input id="usernameInput"

@@ -6,6 +6,7 @@
             id="warped"
             >
     <span v-if="typeof mem.likeCount !== 'undefined'" class="meme-likes">Проголосовало: <br> {{ mem.likeCount }}</span>
+    <span v-if="mem.isWinner">Победитель!</span>
     <a @click="choose" class="meme-btn">
         <b-img :src="mem.url" alt="meme" rounded class="meme-img" />
         <!-- <b-button href="#" variant="primary" class="btn dark">Test button</b-button> -->
@@ -30,9 +31,6 @@
           return this.$store.getters.currentRight;
         }
       },
-      isWinner() {
-          return this.mem.id === this.$store.getters.winner_id;
-      }
     },
     methods: {
       choose() {
