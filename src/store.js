@@ -56,9 +56,13 @@ const gameModule = {
     },
     raund: undefined, /* 1=1/16, 2=1/8, 3=1/4, 4=1/2, 5=final */
     timer: true, /* 1 - mozhem, 0 - ne mozhem */
-    stage: 2, /* 1-raund, 2-after-raund(table) 3-winner-time */
+    stage: 1, /* 1-raund, 2-after-raund(table) 3-winner-time */
+    meme: {
+      memes_id: 0,
+      memes_img: '',
+    },
+    memes: [],
     winners_id: [],
-    memes_img: [],
   },
   actions: {
     socket_chooseMem: (context, id) => {
@@ -100,6 +104,9 @@ const gameModule = {
     },
     stage(state){
       return state.stage;
+    },
+    memes(state){
+      return state.memes;
     },
   },
   modules: {}

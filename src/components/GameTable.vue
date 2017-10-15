@@ -2,8 +2,9 @@
   <div v-if='checked'>
     <b-container class="bv-example-row">
       <b-row class="text-center">
-          
-      </b-row>
+         <b-col>
+
+         </b-col>
       </b-row>
     </b-container>
   </div>
@@ -12,10 +13,10 @@
 <script>
   export default {
     name: 'GameTable',
-    data() {
-      return {
-        //        image: ''
-      }
+    data:{
+        memes(){
+            return this.$store.getters.memes;
+        }
     },
     computed: {
       checked() {
