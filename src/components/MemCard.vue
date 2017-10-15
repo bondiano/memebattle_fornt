@@ -1,7 +1,7 @@
 <template>
   <div>
      <b-card no-body
-            style="max-width: 30em; margin: 0px 0px 0px 0px;"
+            style="max-width: 35em; margin: 0px 0px 0px 0px;"
             class="text-center"
             id="warped">
     <a @click="choose" class="meme-btn">
@@ -53,26 +53,32 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .wrapper{
+  /* .wrapper{
 
-  }
+  } */
   a{
     text-decoration: none;
   }
   #warped{
     background-color: #000000;
+  margin: 0px 0px 25px 0px !important;
 }
 .meme-img{
   max-height: 500px;
 }
-button.meme-btn{
-  margin: 0px 0px 25px 0px !important;
+.meme-btn{
   padding: 0px !important;
-  background-color: #ffffff;
-  border-color: #000000;
+  border: 3px solid #000 !important;
+  display: block;
 }
-button.meme-btn:hover:active{
-  border-color: #000000 !important;
-  border-radius: 1px;
+a.meme-btn:hover:active{
+  transition: all 0.5s ease-in-out !important;
+  border: 3px solid #fff !important;
+  display: block !important;
+  line-height: 105% !important;
+  -moz-transition: all 0.5s ease-in-out !important; 
+-webkit-transition: all 0.5s ease-in-out !important;
+-moz-transition: all 0.5s ease-in-out !important;
+-o-transition: all 0.5s ease-in-out !important;
 }
 </style>
