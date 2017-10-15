@@ -110,10 +110,10 @@ const gameModule = {
       state.currentRight.url = data[1].url;
       state.timer = true;
     },
-    END_TIMER(state, {winner_id, coins}) {
+    END_TIMER(state, {winner_id, coins, winner_img}) {
       state.timer = false;
       state.coins = coins;
-      state.winner_id = winner_id;
+      state.winners_memes.push({memes_id: winner_id,memes_img:winner_img});
     },
   },
   getters: {
@@ -128,12 +128,6 @@ const gameModule = {
     },
     raund(state) {
       return state.raund;
-    },
-    winners_id(state) {
-      return state.winners_id;
-    },
-    winners_img(state) {
-      return state.winners_img;
     },
     stage(state){
       return state.stage;

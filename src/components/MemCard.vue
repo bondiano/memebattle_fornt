@@ -88,7 +88,6 @@ a.meme-btn:hover{
 span.meme-likes {
     display:inline-block;
     position:absolute;
-
     color:#FFF;
     font-family: 'Roboto', Helvetica;
     font-size:30px; 
