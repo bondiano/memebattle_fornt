@@ -71,8 +71,7 @@
   border: 3px solid #000 !important;
   display: block;
 }
-a.meme-btn:hover:active{
-  transition: all 0.5s ease-in-out !important;
+a.meme-btn:active{
   border: 3px solid #fff !important;
   display: block !important;
   line-height: 105% !important;
@@ -80,5 +79,16 @@ a.meme-btn:hover:active{
 -webkit-transition: all 0.5s ease-in-out !important;
 -moz-transition: all 0.5s ease-in-out !important;
 -o-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
+}
+a.meme-btn:hover{
+  border: 3px solid #fff !important;
+  display: block !important;
+  line-height: 105% !important;
+  -moz-transition: all 0.5s ease-in-out !important; 
+-webkit-transition: all 0.5s ease-in-out !important;
+-moz-transition: all 0.5s ease-in-out !important;
+-o-transition: all 0.5s ease-in-out !important;
+  transition: all 0.5s ease-in-out !important;
 }
 </style>
