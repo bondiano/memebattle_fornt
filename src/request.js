@@ -8,7 +8,6 @@ async function request(options) {
 
 
 export const loginFetch = async function (userData) {
-  console.log(userData)
   return request({
     url: API + 'auth',
     method: 'POST',
