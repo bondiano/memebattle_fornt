@@ -6,7 +6,7 @@ import socketActions from './socketActions';
 
 Vue.use(Vuex);
 
-const ws = new WebSocket("ws://192.168.0.142:8000/ws");
+const ws = new WebSocket("ws://mems.fun/ws");
 
 
 const userModule = {

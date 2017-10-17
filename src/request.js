@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'http://192.168.0.142:8000/';
+const API = 'http://mems.fun/';
 
 async function request(options) {
   return axios(options)
